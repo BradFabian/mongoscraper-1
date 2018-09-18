@@ -11,7 +11,36 @@ var cheerio = require("cheerio");
 // Makes HTTP request for HTML page
 var request = require("request");
 
-// Require all models
+// Makes a request to The Verge's Tech page
+request("https://www.theverge.com/tech", function(error, response, html) {
+
+    // Load the body of the HTML into cheerio
+    var $ = cheerio.load(html);
+
+    // Empty array to save our scraped data
+    var results = [];
+
+    // With cheerio, find each h3-tag with the class "graf" and loop through the results
+    $("h2.c-entry-box--compact__title").each(function(i, element) {
+
+        // Save the text of the h3-tag as "title"
+        var title = $(element).children().text();
+
+        // Find the h3 tag's parent a-tag and save its href value as "link"
+        var link = $(element).children().attr("href");
+
+        // Make an object with data we scraped for this h3 and push it to the results array
+        results.push({
+            title: title,
+            link: link
+        });
+    });
+
+    console.log(results);
+});
+
+
+/* // Require all models
 var db = require("./models");
 
 var PORT = 3000;
@@ -39,4 +68,4 @@ mongoose.connect(MONGODB_URI);
 // Start the server
 app.listen(PORT, function() {
     console.log("App running on port" + PORT + "!");
-});
+}); */
