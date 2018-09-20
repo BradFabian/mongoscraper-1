@@ -1,6 +1,6 @@
 // Exports an object that contains both of the models
 
-module.export = {
+module.exports = {
     Article: require("./Article"),
     Note: require("./Note")
 };
