@@ -45,10 +45,27 @@
         <div class="col-lg-8">
             <div class="card mb-5">
                 <div class="card-body text-dark z-depth-2 rounded">
-                    <h2 class="card-text" id="articletext">{{this.title}}</h2>
-                    <form action="{{this.link}}" method="GET" target="_blank">
-                        <button type="submit" class="btn btn-unique"><i class="fas fa-book-reader"></i> Read Article</button>
-                    </form>
+                    <h2 class="card-text" id="articletext">{{this.title}}</h2><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form class="form-inline" action="{{this.link}}" method="GET" target="_blank">
+                                <button type="submit" class="btn btn-unique btn-sm">
+                                    <i class="fas fa-book-reader"></i> Read Article</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
+                            <form class="form-inline" action="/saved" method="POST">
+                                <button type="submit" class="btn btn-unique btn-sm">
+                                    <i class="far fa-save"></i> Save Article</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-4">
+                            <form class="form-inline" action="/saved" method="POST">
+                                <button type="submit" class="btn btn-unique btn-sm">
+                                    <i class="fas fa-edit"></i> Add Note</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
