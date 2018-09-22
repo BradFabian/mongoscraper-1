@@ -15,7 +15,7 @@ var db = require("../models");
 // GET route for scraping The Verge's Tech page
 router.get("/scrape", function (req, res) {
     // First we grab the body of the html with axios
-    request("https://www.theverge.com/tech").then(function (error, response, html) {
+    request("https://www.theverge.com/tech", function (error, response, html) {
         // Load the body of the HTML into cheerio
         var $ = cheerio.load(html);
 
@@ -53,6 +53,7 @@ router.get("/articles", function (req, res) {
     // Find all articles 
     db.Article.find().sort({ _id: -1 })
         // If all articles are successfully found then send to handlebars
+        .limit(30)
         .exec(function (err, data) {
             if (err) {
                 console.log(err);
@@ -64,6 +65,17 @@ router.get("/articles", function (req, res) {
                 res.render("index", hbsObject);
             }
         });
+});
+
+router.get('/articles-json', function(req, res) {
+    db.Article.find({}, function(err, data) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json(data);
+        }
+    });
 });
 
 

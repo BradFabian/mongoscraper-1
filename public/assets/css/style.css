@@ -14,8 +14,16 @@ body {
     color: #293249;
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 40px;
     text-shadow: 2px 2px 4px #a7ae90;
+}
+
+h3 {
+    font-family: 'Faster One', cursive;
+    font-size: 50px;
+    color: #293249;
+    text-align: center;
+    text-shadow: 1px 1px 2px #a7ae90;
+    margin-bottom: 40px;
 }
 
 .article-header {
