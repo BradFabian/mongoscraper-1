@@ -14,7 +14,7 @@ var db = require("../models");
 
 // Load index page
 router.get("/", function (req, res) {
-    res.redirect("/articles");
+    res.redirect("index");
 });
 
 

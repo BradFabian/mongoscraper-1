@@ -49,7 +49,7 @@ router.get("/scrape", function (req, res) {
 });
 
 // Route for getting all the Articles from the db
-router.get("/articles", function (req, res) {
+router.get("/", function (req, res) {
     // Find all articles 
     db.Article.find().sort({ _id: -1 })
         // If all articles are successfully found then send to handlebars
