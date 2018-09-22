@@ -1,10 +1,20 @@
-var db = require("../models");
+// Dependencies
+var express = require("express");
+var router = express.Router();
 var path = require("path");
 
-module.exports = function(app) {
+// Our scraping tools
+// Axios is a promise-based http library
+var request = require("request");
+// Parses our HTML and helps us find elements
+var cheerio = require("cheerio");
 
-    // Load index page
-    app.get("/index", function(req, res) {
-        res.render("/");
-    });
-};
+// Require all models
+var db = require("../models");
+
+// Load index page
+router.get("/", function (req, res) {
+    res.redirect("/articles");
+});
+
+module.exports = router;

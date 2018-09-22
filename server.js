@@ -4,6 +4,7 @@ var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var methodOverride = require('method-override');
 
 // Require all models
 var db = require("./models");
@@ -17,8 +18,9 @@ var app = express();
 app.use(logger("dev"));
 
 // Setting up Body-parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(methodOverride("_method"));
 
 // Setting up Handlebars middleware
 app.engine("handlebars", exphbs({
@@ -30,8 +32,8 @@ app.set('view engine', 'handlebars');
 app.use(express.static("public"));
 
 // ROUTES
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+app.use(require('./routes/apiroutes'));
+app.use(require('./routes/htmlroutes'));
 
 // Connect to the database and setting it up
 mongoose.Promise = Promise;
@@ -43,5 +45,4 @@ mongoose.set('useCreateIndex', true);
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
 });
-  
-module.exports = app;
+
