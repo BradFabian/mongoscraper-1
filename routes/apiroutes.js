@@ -66,6 +66,7 @@ router.get("/", function (req, res) {
     // Find all articles 
     Article.find().sort({ _id: -1 })
         // If all articles are successfully found then send to handlebars
+        // Limit to 30 articles
         .limit(30)
         .exec(function (err, data) {
             if (err) {
