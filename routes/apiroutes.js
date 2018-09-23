@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Our scraping tools
-// Axios is a promise-based http library
+// Simple way to make HTTP calls
 var request = require("request");
 // Parses our HTML and helps us find elements
 var cheerio = require("cheerio");
