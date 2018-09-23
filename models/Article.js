@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var uniqueValidator = require('mongoose-unique-validator');
 
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
@@ -25,6 +26,7 @@ var ArticleSchema = new Schema({
 
 // This created our model from the above schema, using mongoose's model method
 var Article = mongoose.model("Article", ArticleSchema);
+ArticleSchema.plugin(uniqueValidator);
 
 // Export the Article model
 module.exports = Article;
