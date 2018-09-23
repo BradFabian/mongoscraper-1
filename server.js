@@ -6,8 +6,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var methodOverride = require('method-override');
 
-// Port changed to 5000
-var PORT = 5000;
+// Port changed to 3000
+const PORT = process.env.PORT || 3000;
 
 // Initialize Express app
 var app = express();
