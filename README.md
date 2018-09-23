@@ -1,6 +1,6 @@
 # Mongo Scraper
 
-![Screenshot](/public/images/screenshot.png)
+![Screenshot](/public/assets/images/screenshot.png)
 
 ## NPM dependencies:
 * Express
@@ -13,4 +13,4 @@
 * Cheerio
 
 ## MVC folder structure:
-![Screenshot](/public/images/folder-breakdown.png)
+![Screenshot](/public/assets/images/folder-breakdown.png)
