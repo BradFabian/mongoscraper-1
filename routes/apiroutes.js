@@ -99,7 +99,7 @@ router.get("/articles/:id", function (req, res) {
     // Route finds one article using the req.params.id
     Article.findOne({ _id: req.params.id })
         // And run the populate method with "note"
-        .populate("note")
+     /*    .populate("note") */
         // Then respond with article (note included)
         .then(function (dbArticle) {
             res.json(dbArticle);
