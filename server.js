@@ -6,9 +6,6 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var methodOverride = require('method-override');
 
-// Require all models
-var db = require("./models");
-
 var PORT = 3000;
 
 // Initialize Express app
