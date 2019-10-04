@@ -3,14 +3,20 @@
 ![Screenshot](/public/assets/images/screenshot.png)
 
 ## NPM dependencies:
-* Express
-* Express-handlebars
-* Body-parser
-* Morgan (logger)
-* Mongoose
-* Method-override
-* Request
-* Cheerio
+
+- Express
+- Express-handlebars
+- Body-parser
+- Morgan (logger)
+- Mongoose
+- Method-override
+- Request
+- Cheerio
 
 ## MVC folder structure:
+
 ![Screenshot](/public/assets/images/folder-breakdown.png)
+
+### Model
+
+In my Model I have the Article, Index and Note files. These files all create the structure for my data logic and rules for my project.
