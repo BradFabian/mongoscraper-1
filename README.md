@@ -20,3 +20,7 @@
 ### Model
 
 In my Model I have the Article, Index and Note files. These files all create the structure for my data logic and rules for my project.
+
+### View
+
+In my View I broken it into a main page that pulls the images and css styling from a public file.
