@@ -24,3 +24,7 @@ In my Model I have the Article, Index and Note files. These files all create the
 ### View
 
 In my View I broken it into a main page that pulls the images and css styling from a public file.
+
+### Controller
+
+A controller responds to the user input and performs interactions on the data model objects. The routes receives the input, optionally validates it and then passes the input to the model. Which is acting as my controller.
